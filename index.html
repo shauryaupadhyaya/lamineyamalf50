@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Lamine Yamal F50s</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --bg-dark: #111214;
+      --pink: #ff2cc7;
+      --white: #f1f1f1;
+      --gray-dark: #1a1a1c;
+      --shadow: rgba(255, 44, 199, 0.3);
+      --nav-bg: #1a1a1c;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin:0; padding:0;
+      background: var(--bg-dark);
+      color: var(--white);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .top-bar {
+      position: fixed;
+      top:0; left:0; right:0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--nav-bg);
+      padding: 1rem 2rem;
+      z-index: 100;
+      background: linear-gradient(270deg, #1a1a1c, var(--pink), #441a52);
+      background-size: 600% 600%;
+      animation: gradientShift 15s ease infinite;
+      transition: all 0.3s ease;
+    }
+
+    .top-bar:hover{ box-shadow: 0 0 100px rgb(0, 0, 0); }
+    .top-bar .logo { font-weight: 700; font-size: 1.2rem; color: var(--white); letter-spacing: 0.1em; }
+    .top-bar nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    .top-bar nav a:hover { color: var(--pink); }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+      padding: 2rem 1rem 2rem 50px;
+      overflow: hidden;
+      position: relative;
+      margin-top: 60px;
+      color: var(--white);
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://preview.thenewsmarket.com/Previews/ADID/StillAssets/1920x1440/685136_v2.jpg') center center / cover no-repeat;
+      opacity: 0.4;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    header > * { position: relative; z-index: 2; }
+
+    .floaty {
+      margin: 2rem 0;
+      width: 350px;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 25px var(--pink));
+      animation: floaty 4s ease-in-out infinite;
+      border-radius: 10px;
+      --r: 15px;
+      padding: var(--r);
+      filter: grayscale(.1) drop-shadow(0 0 1px var(--pink)) drop-shadow(0 0 1px var(--pink));
+      background: radial-gradient(50% 50%,#0000 65%,#fff 67%) round var(--r) var(--r)/calc(2*var(--r)) calc(2*var(--r));
+      transition: all 1s ease;
+      filter: drop-shadow(0 0 35px var(--pink)) grayscale(0);
+    }
+
+    @keyframes floaty {
+      0%,100%{ transform: translateY(0px); }
+      50%{ transform: translateY(-15px); }
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.1rem;
+      color: var(--pink);
+      line-height: 1.1;
+    }
+
+    header p { font-size: 1.25rem; letter-spacing: 0.02em; line-height: 1.4; margin-bottom: 0.5rem; }
+
+    @keyframes gradientShift { 0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%} }
+
+    .scrolling-text-container {
+      width:100vw;
+      overflow:hidden;
+      border-top:2px solid var(--pink);
+      border-bottom:2px solid var(--pink);
+      margin-bottom:3rem;
+      background: var(--gray-dark);
+    }
+    .scrolling-text {
+      display: inline-block;
+      white-space: nowrap;
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      padding: 1rem 0;
+      color: var(--pink);
+      animation: marquee 20s linear infinite;
+    }
+    @keyframes marquee { from{transform:translateX(0%);} to{transform:translateX(-100%);} }
+
+    section#features {
+      width: 100vw;
+      padding: 0 2rem;
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+    }
+
+    .feature { display: grid; grid-template-columns: repeat(2, 1fr); align-items: center; gap: 3rem; margin-bottom: 6rem; }
+    .feature:nth-child(even){ direction: rtl; }
+    .feature:nth-child(even) .text{ direction: ltr; }
+    .feature img {
+      width: 100%;
+      height: auto;
+      border-radius: 30px;
+      box-shadow: 0 10px 40px var(--shadow);
+      transition: transform 0.4s ease;
+      animation: autoshowanimation both 1s ease;
+      animation-timeline: view(40% 5%);
+    }
+    .feature img:hover { transform: scale(1.05) rotate(-1deg); }
+    .feature .text { font-size: 1.2rem; letter-spacing: 0.04em; max-width: 600px; }
+    .feature .text h2 { font-size: 2rem; margin-bottom: 0.8rem; color: var(--pink); }
+    .feature .text p { line-height: 1.6; }
+
+    .buy-btn {
+      position: relative;
+      overflow: hidden;
+      background: var(--pink);
+      color: var(--white);
+      display: inline-block;
+      padding: 1.1rem 3rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      max-width: 240px;
+      text-align: center;
+      transition: color 0.3s ease;
+      box-shadow: 0 0 30px var(--pink);
+      cursor: pointer;
+      margin: 0 auto;
+      display: block;
+    }
+    .buy-btn::before {
+      content:"";
+      position:absolute;
+      top:0; left:0;
+      width:0%;
+      height:100%;
+      background: var(--white);
+      z-index: 0;
+      transition: width 0.4s ease;
+    }
+    .buy-btn:hover::before { width:100%; }
+    .buy-btn:hover { color: var(--pink); box-shadow: 0 0 50px var(--white); transform: scale(1.03); transition: all ease 0.3s;}
+    .buy-btn span { position:relative; z-index:1; }
+
+    @media (max-width: 768px) {
+      section#features { padding: 0 1rem; }
+      .feature { grid-template-columns: 1fr !important; margin-bottom: 3rem; }
+      .feature:nth-child(even) { direction: ltr; }
+      .feature img { width: 100%; margin-bottom: 1rem; }
+      .feature .text { max-width: 100%; font-size: 1rem; }
+      header { padding-left: 15px; }
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      .feature .text h2 { font-size: 1.1rem; }
+      .scrolling-text { font-size: 1rem; }
+    }
+
+    .autoshow { animation: autoshowanimation both 1s ease; animation-timeline: view(50% 5%); }
+    @keyframes autoshowanimation { from { opacity:0; transform: translateY(200px) scale(0.3);} to{opacity:1; transform: translateY(0) scale(1);} }
+
+    #product-options { padding: 4rem 1rem; }
+    .product-box {
+      background: #fff;
+      color: #000;
+      border-radius: 15px;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      box-shadow: 0 0 40px rgba(255,44,199,0.2);
+    }
+
+    .product-images {
+      position: relative;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-images input { display: none; }
+    .main-image img {
+      display: none;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 20px;
+      border: 3px solid #ccc;
+    }
+    #img1:checked ~ .main-image .image1 { display: block; }
+    #img2:checked ~ .main-image .image2 { display: block; }
+    #img3:checked ~ .main-image .image3 { display: block; }
+    #img4:checked ~ .main-image .image4 { display: block; }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 1.5rem;
+      user-select: none;
+    }
+    .arrow.left { left: 10px; }
+    .arrow.right { right: 10px; }
+
+    .product-options-right {
+      padding-left: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .size-options { margin: 1.5rem 0; }
+    .sizes { display: flex; gap: 10px; flex-wrap: wrap; }
+    .sizes input { display: none; }
+    .sizes label { cursor: pointer; }
+    .sizes span {
+      background: #eee;
+      padding: 10px 20px;
+      border-radius: 20px;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    span:hover{
+      background: var(--pink);
+      color: #fff;
+      transform: scale(1.1);
+    }
+    .sizes input:checked + span, .sizes span.on { background: #ae1583; color: #fff; }
+
+    .color-options { margin: 1.5rem 0; }
+    .colors { display: flex; gap: 20px; }
+    .colors input { display: none; }
+    .color-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-block;
+      border: 2px solid #333;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+    }
+    .color-circle:hover { box-shadow: 0 0 10px var(--pink); transform: scale(1.1); }
+    .colors input:checked + .color-circle { box-shadow: 0 0 12px #000, 0 0 15px var(--pink); }
+    .pink { background: linear-gradient(135deg, #ff2cc7, #ffb6e6); }
+    .blue { background: linear-gradient(135deg, #3b82f6, #10b981); }
+
+    @media (max-width: 768px) {
+      .product-box { grid-template-columns: 1fr; }
+      .product-images { height: auto; }
+      .product-options-right { padding-left: 0; margin-top: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="logo">F50</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#features">Features</a>
+      <a href="#buy">Order</a>
+    </nav>
+  </div>
+
+  <header>
+    <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/1920x1440/685139_v2.jpg" alt="Lamine Yamal Pink F50s" class="floaty" />
+    <h1>Lamine <br> Yamal <br> F50s</h1>
+    <p>Speed. Style. Supreme Control.<br>Engineered for the elite athlete.</p>
+  </header>
+
+  <div class="scrolling-text-container">
+    <div class="scrolling-text">
+      Lightweight & Ultra-Fast • Extreme Grip Soleplate • Perfect Ball Control • Optimal Footlock • Engineered For Champions •
+    </div>
+  </div>
+
+  <section id="features">
+    <div class="feature">
+      <img src="https://tamam-mauritius.com/cdn/shop/files/5fb59b88.png?v=1736404972&width=1445" alt="Ultra-Light Design">
+      <div class="text">
+        <h2 class="autoshow">Ultra-Light Design</h2>
+        <p class="autoshow">The Lamine Yamal Pink F50s boots are meticulously crafted using the latest lightweight materials, allowing for rapid acceleration and effortless agility. Each step feels natural, enhancing performance for elite athletes who demand precision and speed.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <img src="https://dukaan.b-cdn.net/1000x1000/webp/media/23d346c5-468e-4a5d-8447-a7633dfd8cc6.png" alt="Revolutionary Grip">
+      <div class="text">
+        <h2 class="autoshow">Revolutionary Grip</h2>
+        <p class="autoshow">Featuring a specially engineered soleplate with micro-studs, these boots provide unmatched traction on every surface. The grip technology ensures explosive quick turns, stability during high-speed sprints, and consistent control in intense match conditions. Players will feel more confident with every pivot, cut, and strike.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <img src="https://dukaan.b-cdn.net/700x700/webp/media/c5c177f8-a166-40b6-a29c-05f878a4ae6c.png" alt="Perfect Fit">
+      <div class="text">
+        <h2 class="autoshow">Perfect Fit</h2>
+        <p class="autoshow">Designed with a laceless compression upper, the F50s hug the foot securely, offering total lockdown and maximum comfort. The seamless design ensures optimal ball control, allowing players to feel the game in every touch and move with confidence.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="product-options">
+    <div class="product-box">
+      <div class="product-images">
+        <input type="radio" name="shoe-image" id="img1" checked>
+        <input type="radio" name="shoe-image" id="img2">
+        <input type="radio" name="shoe-image" id="img3">
+        <input type="radio" name="shoe-image" id="img4">
+
+        <div class="main-image">
+          <img src="https://dukaan.b-cdn.net/1000x1000/webp/media/23d346c5-468e-4a5d-8447-a7633dfd8cc6.png" class="image1">
+          <img src="https://dukaan.b-cdn.net/700x700/webp/media/c5c177f8-a166-40b6-a29c-05f878a4ae6c.png" class="image2">
+          <img src="https://tamam-mauritius.com/cdn/shop/files/5fb59b88.png?v=1736404972&width=1445" class="image3">
+          <img src="https://preview.thenewsmarket.com/Previews/ADID/StillAssets/1920x1440/685139_v2.jpg" class="image4">
+        </div>
+
+        <label for="img1" class="arrow left"><</label>
+        <label for="img2" class="arrow right">></label>
+      </div>
+
+      <div class="product-options-right">
+        <h2>Customize Your F50
+      
+      <div class="size-options">
+        <h3>Select Size</h3>
+        <div class="sizes">
+          <label><input type="radio" name="size"><span>6</span></label>
+          <label><input type="radio" name="size"><span>7</span></label>
+          <label><input type="radio" name="size"><span>8</span></label>
+          <label><input type="radio" name="size"><span>9</span></label>
+          <label><input type="radio" name="size"><span>10</span></label>
+        </div>
+      </div>
+
+      <div class="color-options">
+        <h3>Select Color</h3>
+        <div class="colors">
+          <label><input type="radio" name="color" checked><span class="color-circle pink"></span></label>
+          <label><input type="radio" name="color"><span class="color-circle blue"></span></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="buy" style="text-align:center; padding:4rem 1rem;">
+    <a href="#buy" class="buy-btn"><span>Pre-Order Now $199</span></a>
+  </section>
+
+</body>
+</html>
