@@ -1,1 +1,14 @@
 # lamineyamalf50
+- changing gradient background added
+- top navigator bar added
+- marque added for features
+- background changing gradient shifted to the navigator bar
+- low opacity picture added to the background
+- stamp like photo style added to the home page area
+- features part added
+- features images tilting animation added
+- features text and image rising animation added with view()
+- buy button added with hover properties
+- buy section with size and colour selector added
+- image changing in buy section added
+- floating and shadow property added to home page image
