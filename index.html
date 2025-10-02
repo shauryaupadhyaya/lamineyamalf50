@@ -173,7 +173,6 @@
       box-shadow: 0 0 30px var(--pink);
       cursor: pointer;
       margin: 0 auto;
-      display: block;
     }
     .buy-btn::before {
       content:"";
@@ -277,12 +276,12 @@
       display: inline-block;
     }
 
-    span:hover{
+    .sizes span:hover{
       background: var(--pink);
       color: #fff;
       transform: scale(1.1);
     }
-    .sizes input:checked + span, .sizes span.on { background: #ae1583; color: #fff; }
+    .sizes input:checked + span, .sizes span.on { background: #342b32; color: #fff; }
 
     .color-options { margin: 1.5rem 0; }
     .colors { display: flex; gap: 20px; }
@@ -296,8 +295,8 @@
       cursor: pointer;
       transition: box-shadow 0.3s ease, transform 0.2s ease;
     }
-    .color-circle:hover { box-shadow: 0 0 10px var(--pink); transform: scale(1.1); }
-    .colors input:checked + .color-circle { box-shadow: 0 0 12px #000, 0 0 15px var(--pink); }
+    .color-circle:hover { box-shadow: 0 0 10px var(--gray-dark); transform: scale(1.1); }
+    .colors input:checked + .color-circle { box-shadow: 0 0 12px #000, 0 0 15px var(--gray-dark); }
     .pink { background: linear-gradient(135deg, #ff2cc7, #ffb6e6); }
     .blue { background: linear-gradient(135deg, #3b82f6, #10b981); }
 
@@ -375,7 +374,7 @@
       </div>
 
       <div class="product-options-right">
-        <h2>Customize Your F50
+        <h2 id="custom">Personalize Your F50
       
       <div class="size-options">
         <h3>Select Size</h3>
