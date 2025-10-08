@@ -184,13 +184,30 @@
       z-index: 0;
       transition: width 0.4s ease;
     }
+
+    #buy {
+      background: var(--section-dark);
+      border-radius: 18px;
+      margin: 4rem auto 0;
+      padding: 4rem 1rem;
+      text-align: center;
+      max-width: 580px;
+      box-shadow: 0 0 40px rgba(255,44,199,0.2);
+    }
+    #buy h2 {
+      color: var(--pink);
+      margin-bottom: 1rem;
+      font-size: 2.1rem;
+      font-weight: 800;
+    }
+
     .buy-btn:hover::before { width:100%; }
     .buy-btn:hover { color: var(--pink); box-shadow: 0 0 50px var(--white); transform: scale(1.03); transition: all ease 0.3s;}
     .buy-btn span { position:relative; z-index:1; }
 
     @media (max-width: 768px) {
       section#features { padding: 0 1rem; }
-      .feature { grid-template-columns: 1fr !important; margin-bottom: 3rem; }
+      .feature { grid-template-columns: 1fr; margin-bottom: 3rem; }
       .feature:nth-child(even) { direction: ltr; }
       .feature img { width: 100%; margin-bottom: 1rem; }
       .feature .text { max-width: 100%; font-size: 1rem; }
@@ -206,7 +223,7 @@
 
     #product-options { padding: 4rem 1rem; }
     .product-box {
-      background: #fff;
+      background: #18181b;
       color: #000;
       border-radius: 15px;
       padding: 2rem;
@@ -215,7 +232,7 @@
       gap: 2rem;
       max-width: 1000px;
       margin: 0 auto;
-      box-shadow: 0 0 40px rgba(255,44,199,0.2);
+      box-shadow: 0 0 100px rgba(255,44,199,0.2);
     }
 
     .product-images {
@@ -291,12 +308,12 @@
       height: 40px;
       border-radius: 50%;
       display: inline-block;
-      border: 2px solid #333;
+      border: 2px solid #d4d3d3;
       cursor: pointer;
       transition: box-shadow 0.3s ease, transform 0.2s ease;
     }
     .color-circle:hover { box-shadow: 0 0 10px var(--gray-dark); transform: scale(1.1); }
-    .colors input:checked + .color-circle { box-shadow: 0 0 12px #000, 0 0 15px var(--gray-dark); }
+    .colors input:checked + .color-circle { box-shadow: 0 0 12px #d4d3d3, 0 0 15px var(--gray-dark); }
     .pink { background: linear-gradient(135deg, #ff2cc7, #ffb6e6); }
     .blue { background: linear-gradient(135deg, #3b82f6, #10b981); }
 
@@ -305,6 +322,9 @@
       .product-images { height: auto; }
       .product-options-right { padding-left: 0; margin-top: 2rem; }
     }
+
+    footer{background:#111;text-align:center;padding:2rem;color:#aaa;margin-top:4rem;border-top:1px solid rgba(255,255,255,0.1);}
+    footer a{color:var(--pink); text-decoration:none;}
   </style>
 </head>
 <body>
@@ -374,10 +394,10 @@
       </div>
 
       <div class="product-options-right">
-        <h2 id="custom">Personalize Your F50
+        <h2 id="custom" style="color: var(--pink);">Personalize Your F50
       
       <div class="size-options">
-        <h3>Select Size</h3>
+        <h3 style="color: var(--white);">Select Size</h3>
         <div class="sizes">
           <label><input type="radio" name="size"><span>6</span></label>
           <label><input type="radio" name="size"><span>7</span></label>
@@ -388,7 +408,7 @@
       </div>
 
       <div class="color-options">
-        <h3>Select Color</h3>
+        <h3 style="color: var(--white);">Select Color</h3>
         <div class="colors">
           <label><input type="radio" name="color" checked><span class="color-circle pink"></span></label>
           <label><input type="radio" name="color"><span class="color-circle blue"></span></label>
@@ -399,8 +419,13 @@
 </section>
 
   <section id="buy" style="text-align:center; padding:4rem 1rem;">
+    <h2>Ready to Own the Game?</h2>
+    <br>
     <a href="#buy" class="buy-btn"><span>Pre-Order Now $199</span></a>
   </section>
 
 </body>
+<footer>
+    <p>© 2025 F50 Sneakers • Built with sqqkil •</p>
+</footer>
 </html>
