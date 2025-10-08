@@ -13,3 +13,5 @@
 - image changing in buy section added
 - floating and shadow property added to home page image
 - buy section colour scheme swapped
+- buy button text added
+- footer added and styled
