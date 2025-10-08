@@ -12,3 +12,4 @@
 - buy section with size and colour selector added
 - image changing in buy section added
 - floating and shadow property added to home page image
+- buy section colour scheme swapped
